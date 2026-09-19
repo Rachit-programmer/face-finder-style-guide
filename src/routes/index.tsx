@@ -199,7 +199,11 @@ function Index() {
             </div>
 
             <div>
-              <h3 className="text-2xl">Hairstyles for a {top.label.toLowerCase()} face</h3>
+              <h3 className="text-2xl">
+                Hairstyles for {/^[aeiou]/i.test(top.label) ? "an" : "a"}{" "}
+                {top.label.toLowerCase()} face
+              </h3>
+
               <Tabs
                 value={gender}
                 onValueChange={(v) => setGender(v as Gender)}
